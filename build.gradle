@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '1.19-SNAPSHOT'
+    id 'net.fabricmc.fabric-loom' version '1.19-SNAPSHOT'
     id 'maven-publish'
 }
 
@@ -20,9 +20,8 @@ repositories {
 
 dependencies {
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
-    mappings loom.officialMojangMappings()
-    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+    implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
     compileOnly "org.geysermc.floodgate:api:2.2.3-SNAPSHOT"
     compileOnly "org.geysermc.cumulus:cumulus:1.1.2"
