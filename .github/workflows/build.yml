@@ -14,20 +14,21 @@ jobs:
       - name: Checkout du code
         uses: actions/checkout@v4
 
-      - name: Configuration de Java 25 (Temurin EA)
+      - name: Configuration de Java 25 (Temurin)
         uses: actions/setup-java@v4
         with:
           java-version: '25'
           distribution: 'temurin'
           check-latest: true
 
-      - name: Configuration de Gradle 9.0
-        uses: gradle/actions/setup-gradle@v4
-        with:
-          gradle-version: '9.0'
+      - name: Permissions Gradlew
+        run: chmod +x gradlew
 
-      - name: Compilation du mod avec Gradle 9
-        run: gradle build --no-daemon
+      - name: Configuration du cache Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Compilation du mod avec Gradlew
+        run: ./gradlew build --no-daemon
 
       - name: Upload du fichier JAR compilé
         uses: actions/upload-artifact@v4
