@@ -1,0 +1,5 @@
+.gradle/
+build/
+.lifesteal-backup/
+*.bak
+fix-cloud-and-local.sh
