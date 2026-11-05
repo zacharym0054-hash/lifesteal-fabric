@@ -47,3 +47,8 @@ java {
         languageVersion = JavaLanguageVersion.of(25)
     }
 }
+
+tasks.withType(JavaCompile).configureEach {
+    options.compilerArgs.add("-Xmaxerrs")
+    options.compilerArgs.add("1000")
+}

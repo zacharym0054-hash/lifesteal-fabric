@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "NBN",
+    "PBP",
+    "NBN"
+  ],
+  "key": {
+    "N": { "item": "minecraft:netherite_block" },
+    "B": { "item": "minecraft:beacon" },
+    "P": { "item": "minecraft:piglin_head" }
+  },
+  "result": {
+    "id": "lifesteal:heart",
+    "count": 1
+  }
+}

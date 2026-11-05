@@ -1,36 +1,38 @@
-name: Cloud Build Fabric Lifesteal
+name: Build Lifesteal Fabric
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "*" ]
+  pull_request:
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout Source Code
+      - name: Checkout du code
         uses: actions/checkout@v4
 
-      - name: Setup Java 25
-        uses: actions/setup-java@v5
+      - name: Configuration de Java 25 (Temurin EA)
+        uses: actions/setup-java@v4
         with:
-          distribution: 'temurin'
           java-version: '25'
+          distribution: 'temurin'
+          check-latest: true
 
-      - name: Setup Gradle 9.8.2
+      - name: Configuration de Gradle 9.0
         uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: '9.8.2'
-          cache-disabled: true
+          gradle-version: '9.0'
 
-      - name: Compile Fabric Mod
-        run: gradle build --no-daemon --stacktrace
+      - name: Compilation du mod avec Gradle 9
+        run: gradle build --no-daemon
 
-      - name: Upload Compiled JAR
+      - name: Upload du fichier JAR compilé
         uses: actions/upload-artifact@v4
         with:
-          name: lifesteal-mod-jar
+          name: lifesteal-fabric-26.3-jar
           path: |
             build/libs/*.jar
             !build/libs/*-sources.jar

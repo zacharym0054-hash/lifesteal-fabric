@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "lifesteal",
+  "version": "${version}",
+  "name": "Lifesteal Ultimate",
+  "description": "Complete Lifesteal plugin with Java Dialogs, Bedrock FormsUI, Per-Observer Raytraced Holograms, Bounties, and Spectator Death Lock.",
+  "authors": [
+    "LifestealDev"
+  ],
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.lifesteal.LifestealMod"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "minecraft": "*",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
